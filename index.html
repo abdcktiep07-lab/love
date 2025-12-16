@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>家長彩虹情緒卡 - 親子心靈療癒</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Noto+Sans+TC:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            width: 100%;
+            height: 100%;
+        }
+
+        body {
+            font-family: 'Noto Sans TC', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background-color: #faf8f3;
+            color: #292524;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        header {
+            width: 100%;
+            background: white;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            padding: 1rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .logo-icon {
+            width: 2rem;
+            height: 2rem;
+            background: linear-gradient(135deg, #f43f5e, #fb923c);
+            border-radius: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        h1 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #44403c;
+            letter-spacing: 0.05em;
+        }
+
+        .header-right button {
+            font-size: 0.875rem;
+            color: #a8a29e;
+            background: none;
+            border: none;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .header-right button:hover {
+            color: #f43f5e;
+        }
+
+        /* Main Container */
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: calc(100vh - 80px);
+            padding: 2rem 1.5rem;
+            max-width: 28rem;
+            margin: 0 auto;
+        }
+
+        /* Intro Section */
+        .intro-section {
+            text-align: center;
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+
+        .intro-box {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 1.5rem;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            border: 1px solid #f5f5f0;
+            margin-bottom: 1.5rem;
+        }
+
+        .intro-box h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #44403c;
+            margin-bottom: 1rem;
+        }
+
+        .intro-box p {
+            font-size: 0.95rem;
+            color: #78716f;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+            text-align: justify;
+        }
+
+        .chakra-dots {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .dot {
+            width: 0.75rem;
+            height: 0.75rem;
+            border-radius: 50%;
+        }
+
+        .dot-red { background-color: #ef4444; }
+        .dot-orange { background-color: #f97316; }
+        .dot-yellow { background-color: #eab308; }
+        .dot-green { background-color: #22c55e; }
+        .dot-blue { background-color: #3b82f6; }
+        .dot-indigo { background-color: #6366f1; }
+        .dot-purple { background-color: #a855f7; }
+
+        /* Card Section */
+        .card-section {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .card-container {
+            width: 100%;
+            aspect-ratio: 3 / 4;
+            max-height: 500px;
+            perspective: 1000px;
+            position: relative;
+        }
+
+        .card {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.7s ease-out;
+            border-radius: 1.875rem;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            border: 8px solid white;
+            ring: 1px solid rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .card.flipping {
+            animation: cardFlip 0.7s ease-out;
+        }
+
+        @keyframes cardFlip {
+            0% { transform: rotateY(0deg) scale(1); }
+            50% { transform: rotateY(90deg) scale(0.95); }
+            100% { transform: rotateY(0deg) scale(1); }
+        }
+
+        .card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #d1d5db, #e5e7eb);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #6b7280;
+        }
+
+        .card-front {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            background: white;
+        }
+
+        .card-color-band {
+            height: 33.33%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-color-band::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(currentColor 1px, transparent 1px);
+            background-size: 16px 16px;
+            opacity: 0.1;
+        }
+
+        .card-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .card-theme {
+            font-size: 1.125rem;
+            font-weight: 500;
+            color: white;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            position: relative;
+            z-index: 1;
+            opacity: 0.9;
+        }
+
+        .card-content {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            background: white;
+            position: relative;
+        }
+
+        .card-quote-open {
+            position: absolute;
+            top: 1rem;
+            left: 1.5rem;
+            font-size: 3rem;
+            font-family: Georgia, serif;
+            color: #f5f5f0;
+            user-select: none;
+        }
+
+        .card-text {
+            font-size: 1.25rem;
+            font-weight: 500;
+            text-align: center;
+            line-height: 1.8;
+            position: relative;
+            z-index: 1;
+        }
+
+        .card-quote-close {
+            position: absolute;
+            bottom: 1rem;
+            right: 1.5rem;
+            font-size: 3rem;
+            font-family: Georgia, serif;
+            color: #f5f5f0;
+            user-select: none;
+            transform: rotate(180deg);
+        }
+
+        .card-footer {
+            height: 3rem;
+            background: #faf8f3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #a8a29e;
+            font-size: 0.75rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            border-top: 1px solid #f5f5f0;
+        }
+
+        /* Colors */
+        .color-red { background-color: #ef4444; }
+        .color-orange { background-color: #f97316; }
+        .color-yellow { background-color: #eab308; }
+        .color-green { background-color: #22c55e; }
+        .color-blue { background-color: #3b82f6; }
+        .color-indigo { background-color: #6366f1; }
+        .color-purple { background-color: #a855f7; }
+
+        .text-red { color: #dc2626; }
+        .text-orange { color: #ea580c; }
+        .text-yellow { color: #ca8a04; }
+        .text-green { color: #16a34a; }
+        .text-blue { color: #1d4ed8; }
+        .text-indigo { color: #4f46e5; }
+        .text-purple { color: #9333ea; }
+
+        /* Action Buttons */
+        .action-buttons {
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            width: 100%;
+        }
+
+        button {
+            padding: 0.75rem 1.5rem;
+            border-radius: 9999px;
+            border: none;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-family: 'Noto Sans TC', sans-serif;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #f43f5e, #fb923c);
+            color: white;
+            box-shadow: 0 8px 16px rgba(244, 63, 94, 0.3);
+            padding: 1rem 2rem;
+            font-size: 1.125rem;
+        }
+
+        .btn-primary:hover {
+            box-shadow: 0 12px 24px rgba(244, 63, 94, 0.4);
+            transform: scale(1.05);
+        }
+
+        .btn-primary:active {
+            transform: scale(0.95);
+        }
+
+        .btn-secondary {
+            background: #1f2937;
+            color: white;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-secondary:hover {
+            background: #111827;
+        }
+
+        .btn-secondary:active {
+            transform: scale(0.95);
+        }
+
+        .btn-save {
+            background: #f43f5e;
+            color: white;
+            box-shadow: 0 4px 12px rgba(244, 63, 94, 0.2);
+        }
+
+        .btn-save:hover {
+            background: #e11d48;
+        }
+
+        .btn-share {
+            background: #3b82f6;
+            color: white;
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);
+        }
+
+        .btn-share:hover {
+            background: #1d4ed8;
+        }
+
+        button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        /* Hint Text */
+        .hint-text {
+            color: #a8a29e;
+            font-size: 0.875rem;
+            text-align: center;
+            max-width: 20rem;
+            margin-top: 1rem;
+        }
+
+        /* Footer */
+        footer {
+            width: 100%;
+            padding: 1.5rem;
+            text-align: center;
+            color: #a8a29e;
+            font-size: 0.875rem;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-out {
+            animation: fadeOut 0.3s ease-out forwards;
+        }
+
+        @keyframes fadeOut {
+            from {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            to {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+        /* Responsive */
+        @media (max-width: 640px) {
+            header {
+                padding: 1rem;
+            }
+
+            h1 {
+                font-size: 1.125rem;
+            }
+
+            main {
+                padding: 1.5rem 1rem;
+            }
+
+            .intro-box {
+                padding: 1.25rem;
+            }
+
+            .intro-box h2 {
+                font-size: 1.25rem;
+            }
+
+            .intro-box p {
+                font-size: 0.875rem;
+            }
+
+            .card-text {
+                font-size: 1.125rem;
+            }
+
+            .action-buttons {
+                gap: 0.5rem;
+            }
+
+            button {
+                padding: 0.625rem 1.25rem;
+                font-size: 0.875rem;
+            }
+
+            .btn-primary {
+                padding: 0.875rem 1.75rem;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-left">
+            <div class="logo-icon">❤️</div>
+            <h1>家長彩虹情緒卡</h1>
+        </div>
+        <div class="header-right">
+            <button onclick="goHome()" class="hidden" id="backBtn">回首頁</button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Intro Section -->
+        <div class="intro-section" id="introSection">
+            <div class="intro-box">
+                <h2>親愛的家長，您辛苦了</h2>
+                <p>育兒是一場漫長的修行。我們常常照顧了孩子，卻忘記照顧自己的心。</p>
+                <p style="margin-bottom: 0.5rem;">當您感到焦慮、疲憊或迷惘時，請停下來，深呼吸。</p>
+                <p>抽一張彩虹卡，讓宇宙透過文字，給您此刻最需要的力量與指引。</p>
+                <div class="chakra-dots">
+                    <div class="dot dot-red"></div>
+                    <div class="dot dot-orange"></div>
+                    <div class="dot dot-yellow"></div>
+                    <div class="dot dot-green"></div>
+                    <div class="dot dot-blue"></div>
+                    <div class="dot dot-indigo"></div>
+                    <div class="dot dot-purple"></div>
+                </div>
+            </div>
+            <button class="btn-primary" onclick="startDrawing()">
+                ✨ 抽取今天的祝福
+            </button>
+        </div>
+
+        <!-- Card Section -->
+        <div class="card-section hidden" id="cardSection">
+            <div class="card-container">
+                <div class="card" id="card">
+                    <div class="card-back">
+                        <div style="font-size: 3rem; animation: spin 2s linear infinite;">⏳</div>
+                    </div>
+                    <div class="card-front">
+                        <div class="card-color-band" id="colorBand">
+                            <div class="card-icon" id="cardIcon">❤️</div>
+                            <div class="card-theme" id="cardTheme">主題</div>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-quote-open">"</div>
+                            <p class="card-text" id="cardText">卡片文字</p>
+                            <div class="card-quote-close">"</div>
+                        </div>
+                        <div class="card-footer">Parenting Rainbow Card</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <button class="btn-secondary" onclick="drawCard()">
+                    🔄 再抽一張
+                </button>
+                <button class="btn-save" onclick="saveCard()">
+                    💾 保存
+                </button>
+                <button class="btn-share" onclick="shareCard()">
+                    📤 分享
+                </button>
+            </div>
+
+            <p class="hint-text">
+                請在心中默念您的困擾或孩子的名字，然後按下按鈕。
+            </p>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>希望能為每位家長帶來平靜與力量 ❤️</p>
+    </footer>
+
+    <style>
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+    </style>
+
+    <script>
+        // 35張彩虹卡資料庫
+        const cardsData = [
+            // 紅色 - 海底輪 (安全感、信任、生存)
+            { color: 'red', theme: '安頓與信任', text: '我信任孩子有他自己的生命軌跡，我不需要為他承擔所有責任。', icon: '⚓' },
+            { color: 'red', theme: '安頓與信任', text: '在混亂的教養日常中，我依然安穩地扎根於當下。', icon: '⚓' },
+            { color: 'red', theme: '安頓與信任', text: '我為家庭提供的物質與愛，已經足夠好了。', icon: '⚓' },
+            { color: 'red', theme: '安頓與信任', text: '即使孩子暫時迷惘，我仍相信他內在有向上的力量。', icon: '⚓' },
+            { color: 'red', theme: '安頓與信任', text: '照顧好自己的身體健康，也是給孩子最好的禮物。', icon: '⚓' },
+
+            // 橙色 - 臍輪 (情緒、創造力、樂趣)
+            { color: 'orange', theme: '喜悅與流動', text: '我允許自己在育兒生活中，保有屬於我的樂趣與嗜好。', icon: '😊' },
+            { color: 'orange', theme: '喜悅與流動', text: '教養不需要總是嚴肅的，今天我選擇用幽默感來化解衝突。', icon: '😊' },
+            { color: 'orange', theme: '喜悅與流動', text: '我不必當一個完美的父母，我只需要當一個快樂的父母。', icon: '😊' },
+            { color: 'orange', theme: '喜悅與流動', text: '我接納孩子的情緒風暴，也接納我自己會感到疲憊。', icon: '😊' },
+            { color: 'orange', theme: '喜悅與流動', text: '放鬆一點，享受與孩子相處的當下，勝過擔心未來。', icon: '😊' },
+
+            // 黃色 - 太陽神經叢 (自信、界線、行動)
+            { color: 'yellow', theme: '自信與力量', text: '我有能力設立溫和而堅定的界線，這對孩子是安全的。', icon: '☀️' },
+            { color: 'yellow', theme: '自信與力量', text: '我肯定自己至今為止的所有付出，我做得很好。', icon: '☀️' },
+            { color: 'yellow', theme: '自信與力量', text: '面對孩子的挑戰，我選擇回應而非反應。', icon: '☀️' },
+            { color: 'yellow', theme: '自信與力量', text: '我尊重孩子的選擇，也尊重我自己的需求。', icon: '☀️' },
+            { color: 'yellow', theme: '自信與力量', text: '我釋放那些「我不夠好」的罪惡感，我是一個有力量的家長。', icon: '☀️' },
+
+            // 綠色 - 心輪 (愛、寬恕、接納)
+            { color: 'green', theme: '愛與寬恕', text: '我原諒自己過去在教養上犯的錯誤，那是我成長的養分。', icon: '💚' },
+            { color: 'green', theme: '愛與寬恕', text: '我愛孩子原本的樣子，而不是我期待他成為的樣子。', icon: '💚' },
+            { color: 'green', theme: '愛與寬恕', text: '愛是雙向的流動，在付出愛的同時，我也敞開心接受孩子的愛。', icon: '💚' },
+            { color: 'green', theme: '愛與寬恕', text: '當我對自己慈悲時，我就更有能量對孩子慈悲。', icon: '💚' },
+            { color: 'green', theme: '愛與寬恕', text: '即使在衝突中，我們之間的愛依然存在且堅固。', icon: '💚' },
+
+            // 藍色 - 喉輪 (溝通、真實、表達)
+            { color: 'blue', theme: '溝通與平靜', text: '我願意先傾聽孩子的心聲，再表達我的看法。', icon: '🪶' },
+            { color: 'blue', theme: '溝通與平靜', text: '我可以用平靜的語氣，表達我的擔憂與關心。', icon: '🪶' },
+            { color: 'blue', theme: '溝通與平靜', text: '真實地向孩子表達我的脆弱與極限，是建立連結的開始。', icon: '🪶' },
+            { color: 'blue', theme: '溝通與平靜', text: '沈默有時是最有力量的支持，我願意靜靜陪伴。', icon: '🪶' },
+            { color: 'blue', theme: '溝通與平靜', text: '我的話語充滿祝福，而不是恐懼與擔憂。', icon: '🪶' },
+
+            // 靛色 - 眉心輪 (直覺、洞見、遠見)
+            { color: 'indigo', theme: '直覺與看見', text: '我能夠看見孩子行為背後，那顆渴望被理解的心。', icon: '📖' },
+            { color: 'indigo', theme: '直覺與看見', text: '我相信我的父母直覺，它會指引我做出適合當下的決定。', icon: '📖' },
+            { color: 'indigo', theme: '直覺與看見', text: '我不被表象的成績或成就定義，我看見孩子靈魂的光芒。', icon: '📖' },
+            { color: 'indigo', theme: '直覺與看見', text: '將眼光放遠，眼前的困難只是孩子成長長河中的一顆小石子。', icon: '📖' },
+            { color: 'indigo', theme: '直覺與看見', text: '我信任宇宙的安排，孩子正在經歷他靈魂需要的體驗。', icon: '📖' },
+
+            // 紫色 - 頂輪 (智慧、靈性、合一)
+            { color: 'purple', theme: '智慧與放手', text: '真正的愛是放手，讓孩子去體驗他自己的人生旅程。', icon: '✨' },
+            { color: 'purple', theme: '智慧與放手', text: '孩子是藉由我而來，卻不是屬於我的，我尊重他是獨立的個體。', icon: '✨' },
+            { color: 'purple', theme: '智慧與放手', text: '我們是彼此生命的老師，感謝孩子來教導我成為更好的人。', icon: '✨' },
+            { color: 'purple', theme: '智慧與放手', text: '我將焦慮轉化為祝福，送光與愛給我的孩子。', icon: '✨' },
+            { color: 'purple', theme: '智慧與放手', text: '一切都是最好的安排，我臣服於生命的流動。', icon: '✨' },
+        ];
+
+        let currentCard = null;
+        let isAnimating = false;
+
+        // 顏色對應
+        const colorMap = {
+            red: { bg: 'color-red', text: 'text-red' },
+            orange: { bg: 'color-orange', text: 'text-orange' },
+            yellow: { bg: 'color-yellow', text: 'text-yellow' },
+            green: { bg: 'color-green', text: 'text-green' },
+            blue: { bg: 'color-blue', text: 'text-blue' },
+            indigo: { bg: 'color-indigo', text: 'text-indigo' },
+            purple: { bg: 'color-purple', text: 'text-purple' },
+        };
+
+        function startDrawing() {
+            document.getElementById('introSection').classList.add('fade-out');
+            setTimeout(() => {
+                document.getElementById('introSection').classList.add('hidden');
+                document.getElementById('cardSection').classList.remove('hidden');
+                document.getElementById('backBtn').classList.remove('hidden');
+                drawCard();
+            }, 300);
+        }
+
+        function drawCard() {
+            if (isAnimating) return;
+            isAnimating = true;
+
+            const card = document.getElementById('card');
+            card.classList.add('flipping');
+
+            setTimeout(() => {
+                const randomIndex = Math.floor(Math.random() * cardsData.length);
+                currentCard = cardsData[randomIndex];
+
+                const colorBand = document.getElementById('colorBand');
+                const colorClass = colorMap[currentCard.color].bg;
+                colorBand.className = `card-color-band ${colorClass}`;
+
+                document.getElementById('cardIcon').textContent = currentCard.icon;
+                document.getElementById('cardTheme').textContent = currentCard.theme;
+
+                const textElement = document.getElementById('cardText');
+                const textClass = colorMap[currentCard.color].text;
+                textElement.className = `card-text ${textClass}`;
+                textElement.textContent = currentCard.text;
+
+                card.classList.remove('flipping');
+                isAnimating = false;
+            }, 350);
+        }
+
+        function saveCard() {
+            if (!currentCard) return;
+            alert(`已保存卡片：\n\n主題：${currentCard.theme}\n\n"${currentCard.text}"\n\n（此為靜態版本，保存功能需要後端支持）`);
+        }
+
+        function shareCard() {
+            if (!currentCard) return;
+            const text = `${currentCard.theme}\n\n"${currentCard.text}"\n\n來自：家長彩虹情緒卡`;
+            
+            if (navigator.share) {
+                navigator.share({
+                    title: '家長彩虹情緒卡',
+                    text: text,
+                });
+            } else {
+                alert(`分享卡片：\n\n${text}\n\n（複製此文字分享給他人）`);
+            }
+        }
+
+        function goHome() {
+            location.reload();
+        }
+    </script>
+</body>
+</html>
