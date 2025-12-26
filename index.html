@@ -3,10 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>家長彩虹情緒卡 - 親子心靈療癒</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Noto+Sans+TC:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>七色脈輪療癒練習 - 每日正念指引</title>
     <style>
         * {
             margin: 0;
@@ -14,400 +11,168 @@
             box-sizing: border-box;
         }
 
-        html, body {
-            width: 100%;
-            height: 100%;
+        :root {
+            --red-50: #fef2f2;
+            --red-100: #fee2e2;
+            --red-200: #fecaca;
+            --red-300: #fca5a5;
+            --red-500: #ef4444;
+            --red-600: #dc2626;
+            --red-700: #b91c1c;
+            --red-800: #991b1b;
+            
+            --orange-50: #fff7ed;
+            --orange-100: #ffedd5;
+            --orange-200: #fed7aa;
+            --orange-300: #fdba74;
+            --orange-500: #f97316;
+            --orange-600: #ea580c;
+            --orange-700: #c2410c;
+            --orange-800: #9a3412;
+            
+            --yellow-50: #fefce8;
+            --yellow-100: #fef3c7;
+            --yellow-200: #fde68a;
+            --yellow-300: #fcd34d;
+            --yellow-500: #eab308;
+            --yellow-600: #ca8a04;
+            --yellow-800: #854d0e;
+            
+            --green-50: #f0fdf4;
+            --green-100: #dcfce7;
+            --green-200: #bbf7d0;
+            --green-300: #86efac;
+            --green-500: #22c55e;
+            --green-600: #16a34a;
+            --green-700: #15803d;
+            --green-800: #166534;
+            
+            --blue-50: #eff6ff;
+            --blue-100: #dbeafe;
+            --blue-200: #bfdbfe;
+            --blue-300: #93c5fd;
+            --blue-500: #3b82f6;
+            --blue-600: #2563eb;
+            --blue-800: #1e40af;
+            
+            --indigo-50: #eef2ff;
+            --indigo-100: #e0e7ff;
+            --indigo-200: #c7d2fe;
+            --indigo-300: #a5b4fc;
+            --indigo-500: #6366f1;
+            --indigo-600: #4f46e5;
+            --indigo-700: #4338ca;
+            --indigo-800: #3730a3;
+            
+            --purple-50: #faf5ff;
+            --purple-100: #f3e8ff;
+            --purple-200: #e9d5ff;
+            --purple-300: #d8b4fe;
+            --purple-500: #a855f7;
+            --purple-600: #9333ea;
+            --purple-700: #7e22ce;
+            --purple-800: #6b21a8;
+            
+            --gray-50: #f9fafb;
+            --gray-100: #f3f4f6;
+            --gray-200: #e5e7eb;
+            --gray-300: #d1d5db;
+            --gray-400: #9ca3af;
+            --gray-500: #6b7280;
+            --gray-600: #4b5563;
+            --gray-800: #1f2937;
+            --gray-900: #111827;
+            
+            --teal-50: #f0fdfa;
+            --teal-100: #ccfbf1;
+            --teal-200: #99f6e4;
+            --teal-500: #14b8a6;
+            --teal-600: #0d9488;
+            --teal-700: #0f766e;
+            --teal-800: #134e4a;
+            --teal-900: #0f2f2e;
         }
 
         body {
-            font-family: 'Noto Sans TC', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            background-color: #faf8f3;
-            color: #292524;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+            background-color: var(--gray-50);
+            color: var(--gray-800);
             line-height: 1.6;
-            overflow-x: hidden;
+            transition: background-color 0.5s ease;
+            min-height: 100vh;
         }
 
-        /* Header */
-        header {
+        .navbar {
             width: 100%;
-            background: white;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-            padding: 1rem 1.5rem;
+            background-color: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--gray-100);
+            padding: 0.75rem 1rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
             position: sticky;
             top: 0;
-            z-index: 100;
+            z-index: 20;
         }
 
-        .header-left {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-        }
-
-        .logo-icon {
-            width: 2rem;
-            height: 2rem;
-            background: linear-gradient(135deg, #f43f5e, #fb923c);
-            border-radius: 0.5rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.2rem;
-        }
-
-        h1 {
-            font-size: 1.25rem;
+        .navbar h1 {
+            font-size: 1.125rem;
             font-weight: 700;
-            color: #44403c;
-            letter-spacing: 0.05em;
+            color: var(--gray-800);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
         }
 
-        .header-right button {
+        .navbar h1 .hidden-mobile {
+            display: none;
+        }
+
+        .guide-btn {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
             font-size: 0.875rem;
-            color: #a8a29e;
-            background: none;
-            border: none;
+            font-weight: 500;
+            color: var(--gray-600);
+            background-color: white;
+            padding: 0.375rem 0.75rem;
+            border: 1px solid var(--gray-200);
+            border-radius: 9999px;
             cursor: pointer;
-            transition: color 0.3s;
+            transition: all 0.3s ease;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
         }
 
-        .header-right button:hover {
-            color: #f43f5e;
+        .guide-btn:hover {
+            color: var(--gray-900);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transform: translateY(-1px);
         }
 
-        /* Main Container */
-        main {
+        .guide-btn .hidden-mobile {
+            display: none;
+        }
+
+        .main-container {
+            width: 100%;
+            max-width: 56rem;
+            padding: 1.5rem 1rem;
+            margin: 0 auto;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
-            min-height: calc(100vh - 80px);
-            padding: 2rem 1.5rem;
-            max-width: 28rem;
-            margin: 0 auto;
+            min-height: calc(100vh - 60px);
         }
 
-        /* Intro Section */
         .intro-section {
             text-align: center;
-            animation: fadeIn 0.8s ease-out forwards;
+            margin-bottom: 2rem;
+            animation: fadeIn 0.6s ease-in;
         }
 
-        .intro-box {
-            background: white;
-            padding: 1.5rem;
-            border-radius: 1.5rem;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-            border: 1px solid #f5f5f0;
-            margin-bottom: 1.5rem;
-        }
-
-        .intro-box h2 {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: #44403c;
-            margin-bottom: 1rem;
-        }
-
-        .intro-box p {
-            font-size: 0.95rem;
-            color: #78716f;
-            line-height: 1.8;
-            margin-bottom: 1rem;
-            text-align: justify;
-        }
-
-        .chakra-dots {
-            display: flex;
-            justify-content: center;
-            gap: 0.5rem;
-            margin-top: 1rem;
-        }
-
-        .dot {
-            width: 0.75rem;
-            height: 0.75rem;
-            border-radius: 50%;
-        }
-
-        .dot-red { background-color: #ef4444; }
-        .dot-orange { background-color: #f97316; }
-        .dot-yellow { background-color: #eab308; }
-        .dot-green { background-color: #22c55e; }
-        .dot-blue { background-color: #3b82f6; }
-        .dot-indigo { background-color: #6366f1; }
-        .dot-purple { background-color: #a855f7; }
-
-        /* Card Section */
-        .card-section {
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 2rem;
-        }
-
-        .card-container {
-            width: 100%;
-            aspect-ratio: 3 / 4;
-            max-height: 500px;
-            perspective: 1000px;
-            position: relative;
-        }
-
-        .card {
-            width: 100%;
-            height: 100%;
-            position: relative;
-            transform-style: preserve-3d;
-            transition: transform 0.7s ease-out;
-            border-radius: 1.875rem;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-            border: 8px solid white;
-            ring: 1px solid rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-        }
-
-        .card.flipping {
-            animation: cardFlip 0.7s ease-out;
-        }
-
-        @keyframes cardFlip {
-            0% { transform: rotateY(0deg) scale(1); }
-            50% { transform: rotateY(90deg) scale(0.95); }
-            100% { transform: rotateY(0deg) scale(1); }
-        }
-
-        .card-back {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, #d1d5db, #e5e7eb);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #6b7280;
-        }
-
-        .card-front {
-            width: 100%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            background: white;
-        }
-
-        .card-color-band {
-            height: 33.33%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 1.5rem;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .card-color-band::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background-image: radial-gradient(currentColor 1px, transparent 1px);
-            background-size: 16px 16px;
-            opacity: 0.1;
-        }
-
-        .card-icon {
-            font-size: 2rem;
-            margin-bottom: 0.5rem;
-            position: relative;
-            z-index: 1;
-        }
-
-        .card-theme {
-            font-size: 1.125rem;
-            font-weight: 500;
-            color: white;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            position: relative;
-            z-index: 1;
-            opacity: 0.9;
-        }
-
-        .card-content {
-            flex: 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 2rem;
-            background: white;
-            position: relative;
-        }
-
-        .card-quote-open {
-            position: absolute;
-            top: 1rem;
-            left: 1.5rem;
-            font-size: 3rem;
-            font-family: Georgia, serif;
-            color: #f5f5f0;
-            user-select: none;
-        }
-
-        .card-text {
-            font-size: 1.25rem;
-            font-weight: 500;
-            text-align: center;
-            line-height: 1.8;
-            position: relative;
-            z-index: 1;
-        }
-
-        .card-quote-close {
-            position: absolute;
-            bottom: 1rem;
-            right: 1.5rem;
-            font-size: 3rem;
-            font-family: Georgia, serif;
-            color: #f5f5f0;
-            user-select: none;
-            transform: rotate(180deg);
-        }
-
-        .card-footer {
-            height: 3rem;
-            background: #faf8f3;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #a8a29e;
-            font-size: 0.75rem;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            border-top: 1px solid #f5f5f0;
-        }
-
-        /* Colors */
-        .color-red { background-color: #ef4444; }
-        .color-orange { background-color: #f97316; }
-        .color-yellow { background-color: #eab308; }
-        .color-green { background-color: #22c55e; }
-        .color-blue { background-color: #3b82f6; }
-        .color-indigo { background-color: #6366f1; }
-        .color-purple { background-color: #a855f7; }
-
-        .text-red { color: #dc2626; }
-        .text-orange { color: #ea580c; }
-        .text-yellow { color: #ca8a04; }
-        .text-green { color: #16a34a; }
-        .text-blue { color: #1d4ed8; }
-        .text-indigo { color: #4f46e5; }
-        .text-purple { color: #9333ea; }
-
-        /* Action Buttons */
-        .action-buttons {
-            display: flex;
-            gap: 0.75rem;
-            flex-wrap: wrap;
-            justify-content: center;
-            width: 100%;
-        }
-
-        button {
-            padding: 0.75rem 1.5rem;
-            border-radius: 9999px;
-            border: none;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-family: 'Noto Sans TC', sans-serif;
-        }
-
-        .btn-primary {
-            background: linear-gradient(135deg, #f43f5e, #fb923c);
-            color: white;
-            box-shadow: 0 8px 16px rgba(244, 63, 94, 0.3);
-            padding: 1rem 2rem;
-            font-size: 1.125rem;
-        }
-
-        .btn-primary:hover {
-            box-shadow: 0 12px 24px rgba(244, 63, 94, 0.4);
-            transform: scale(1.05);
-        }
-
-        .btn-primary:active {
-            transform: scale(0.95);
-        }
-
-        .btn-secondary {
-            background: #1f2937;
-            color: white;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-        }
-
-        .btn-secondary:hover {
-            background: #111827;
-        }
-
-        .btn-secondary:active {
-            transform: scale(0.95);
-        }
-
-        .btn-save {
-            background: #f43f5e;
-            color: white;
-            box-shadow: 0 4px 12px rgba(244, 63, 94, 0.2);
-        }
-
-        .btn-save:hover {
-            background: #e11d48;
-        }
-
-        .btn-share {
-            background: #3b82f6;
-            color: white;
-            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);
-        }
-
-        .btn-share:hover {
-            background: #1d4ed8;
-        }
-
-        button:disabled {
-            opacity: 0.5;
-            cursor: not-allowed;
-        }
-
-        /* Hint Text */
-        .hint-text {
-            color: #a8a29e;
-            font-size: 0.875rem;
-            text-align: center;
-            max-width: 20rem;
-            margin-top: 1rem;
-        }
-
-        /* Footer */
-        footer {
-            width: 100%;
-            padding: 1.5rem;
-            text-align: center;
-            color: #a8a29e;
-            font-size: 0.875rem;
-        }
-
-        /* Animations */
         @keyframes fadeIn {
             from {
                 opacity: 0;
@@ -419,286 +184,1369 @@
             }
         }
 
-        .fade-out {
-            animation: fadeOut 0.3s ease-out forwards;
+        .intro-section h2 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--gray-800);
+            margin-bottom: 0.75rem;
+            letter-spacing: 0.05em;
         }
 
-        @keyframes fadeOut {
-            from {
-                opacity: 1;
-                transform: translateY(0);
-            }
-            to {
-                opacity: 0;
-                transform: translateY(10px);
-            }
+        .intro-section p {
+            color: var(--gray-600);
+            font-size: 1rem;
+            opacity: 0.9;
+            max-width: 32rem;
+            margin: 0 auto;
         }
 
-        .hidden {
-            display: none !important;
+        .chakra-nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+            width: 100%;
         }
 
-        /* Responsive */
-        @media (max-width: 640px) {
-            header {
-                padding: 1rem;
+        .chakra-btn {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 0.75rem;
+            border: 1px solid var(--gray-200);
+            border-radius: 0.75rem;
+            background-color: white;
+            color: var(--gray-500);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        .chakra-btn:hover {
+            background-color: var(--gray-50);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .chakra-btn.active {
+            color: white;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            transform: scale(1.05);
+            border-color: transparent;
+        }
+
+        .chakra-btn svg {
+            width: 1.125rem;
+            height: 1.125rem;
+        }
+
+        .chakra-btn .hidden-mobile {
+            display: none;
+        }
+
+        @media (min-width: 640px) {
+            .navbar h1 .hidden-mobile,
+            .guide-btn .hidden-mobile,
+            .chakra-btn .hidden-mobile {
+                display: inline;
+            }
+            
+            .sm-only {
+                display: none !important;
             }
 
-            h1 {
-                font-size: 1.125rem;
+            .intro-section h2 {
+                font-size: 2.25rem;
             }
 
-            main {
-                padding: 1.5rem 1rem;
+            .chakra-nav {
+                gap: 0.75rem;
             }
 
-            .intro-box {
-                padding: 1.25rem;
-            }
-
-            .intro-box h2 {
-                font-size: 1.25rem;
-            }
-
-            .intro-box p {
+            .chakra-btn {
+                padding: 0.75rem 1rem;
                 font-size: 0.875rem;
             }
+        }
 
-            .card-text {
-                font-size: 1.125rem;
+        .main-card {
+            width: 100%;
+            max-width: 42rem;
+            background-color: white;
+            border-radius: 1.5rem;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            overflow: hidden;
+            transition: all 0.5s ease;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .main-card:hover {
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+        }
+
+        .card-header {
+            padding: 1.5rem;
+            border-bottom: 1px solid;
+            background-color: rgba(255, 255, 255, 0.5);
+            transition: background-color 0.5s ease;
+        }
+
+        @media (min-width: 768px) {
+            .card-header {
+                padding: 2rem;
             }
+        }
 
-            .action-buttons {
-                gap: 0.5rem;
+        .card-header-title {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        @media (min-width: 768px) {
+            .card-header-title {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 1rem;
             }
+        }
 
-            button {
-                padding: 0.625rem 1.25rem;
-                font-size: 0.875rem;
+        .card-header-title h2 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        @media (min-width: 768px) {
+            .card-header-title h2 {
+                font-size: 1.5rem;
             }
+        }
 
-            .btn-primary {
-                padding: 0.875rem 1.75rem;
+        .color-badge {
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            background-color: white;
+            border: 1px solid;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            width: fit-content;
+        }
+
+        .card-header-info {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            font-size: 0.875rem;
+            color: var(--gray-600);
+        }
+
+        @media (min-width: 768px) {
+            .card-header-info {
                 font-size: 1rem;
             }
         }
-    </style>
-</head>
-<body>
-    <!-- Header -->
-    <header>
-        <div class="header-left">
-            <div class="logo-icon">❤️</div>
-            <h1>家長彩虹情緒卡</h1>
-        </div>
-        <div class="header-right">
-            <button onclick="goHome()" class="hidden" id="backBtn">回首頁</button>
-        </div>
-    </header>
 
-    <!-- Main Content -->
-    <main>
-        <!-- Intro Section -->
-        <div class="intro-section" id="introSection">
-            <div class="intro-box">
-                <h2>親愛的家長，您辛苦了</h2>
-                <p>育兒是一場漫長的修行。我們常常照顧了孩子，卻忘記照顧自己的心。</p>
-                <p style="margin-bottom: 0.5rem;">當您感到焦慮、疲憊或迷惘時，請停下來，深呼吸。</p>
-                <p>抽一張彩虹卡，讓宇宙透過文字，給您此刻最需要的力量與指引。</p>
-                <div class="chakra-dots">
-                    <div class="dot dot-red"></div>
-                    <div class="dot dot-orange"></div>
-                    <div class="dot dot-yellow"></div>
-                    <div class="dot dot-green"></div>
-                    <div class="dot dot-blue"></div>
-                    <div class="dot dot-indigo"></div>
-                    <div class="dot dot-purple"></div>
-                </div>
-            </div>
-            <button class="btn-primary" onclick="startDrawing()">
-                ✨ 抽取今天的祝福
-            </button>
-        </div>
-
-        <!-- Card Section -->
-        <div class="card-section hidden" id="cardSection">
-            <div class="card-container">
-                <div class="card" id="card">
-                    <div class="card-back">
-                        <div style="font-size: 3rem; animation: spin 2s linear infinite;">⏳</div>
-                    </div>
-                    <div class="card-front">
-                        <div class="card-color-band" id="colorBand">
-                            <div class="card-icon" id="cardIcon">❤️</div>
-                            <div class="card-theme" id="cardTheme">主題</div>
-                        </div>
-                        <div class="card-content">
-                            <div class="card-quote-open">"</div>
-                            <p class="card-text" id="cardText">卡片文字</p>
-                            <div class="card-quote-close">"</div>
-                        </div>
-                        <div class="card-footer">Parenting Rainbow Card</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="action-buttons">
-                <button class="btn-secondary" onclick="drawCard()">
-                    🔄 再抽一張
-                </button>
-                <button class="btn-save" onclick="saveCard()">
-                    💾 保存
-                </button>
-                <button class="btn-share" onclick="shareCard()">
-                    📤 分享
-                </button>
-            </div>
-
-            <p class="hint-text">
-                請在心中默念您的困擾或孩子的名字，然後按下按鈕。
-            </p>
-        </div>
-    </main>
-
-    <!-- Footer -->
-    <footer>
-        <p>希望能為每位家長帶來平靜與力量 ❤️</p>
-    </footer>
-
-    <style>
-        @keyframes spin {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-    </style>
-
-    <script>
-        // 35張彩虹卡資料庫
-        const cardsData = [
-            // 紅色 - 海底輪 (安全感、信任、生存)
-            { color: 'red', theme: '安頓與信任', text: '我信任孩子有他自己的生命軌跡，我不需要為他承擔所有責任。', icon: '⚓' },
-            { color: 'red', theme: '安頓與信任', text: '在混亂的教養日常中，我依然安穩地扎根於當下。', icon: '⚓' },
-            { color: 'red', theme: '安頓與信任', text: '我為家庭提供的物質與愛，已經足夠好了。', icon: '⚓' },
-            { color: 'red', theme: '安頓與信任', text: '即使孩子暫時迷惘，我仍相信他內在有向上的力量。', icon: '⚓' },
-            { color: 'red', theme: '安頓與信任', text: '照顧好自己的身體健康，也是給孩子最好的禮物。', icon: '⚓' },
-
-            // 橙色 - 臍輪 (情緒、創造力、樂趣)
-            { color: 'orange', theme: '喜悅與流動', text: '我允許自己在育兒生活中，保有屬於我的樂趣與嗜好。', icon: '😊' },
-            { color: 'orange', theme: '喜悅與流動', text: '教養不需要總是嚴肅的，今天我選擇用幽默感來化解衝突。', icon: '😊' },
-            { color: 'orange', theme: '喜悅與流動', text: '我不必當一個完美的父母，我只需要當一個快樂的父母。', icon: '😊' },
-            { color: 'orange', theme: '喜悅與流動', text: '我接納孩子的情緒風暴，也接納我自己會感到疲憊。', icon: '😊' },
-            { color: 'orange', theme: '喜悅與流動', text: '放鬆一點，享受與孩子相處的當下，勝過擔心未來。', icon: '😊' },
-
-            // 黃色 - 太陽神經叢 (自信、界線、行動)
-            { color: 'yellow', theme: '自信與力量', text: '我有能力設立溫和而堅定的界線，這對孩子是安全的。', icon: '☀️' },
-            { color: 'yellow', theme: '自信與力量', text: '我肯定自己至今為止的所有付出，我做得很好。', icon: '☀️' },
-            { color: 'yellow', theme: '自信與力量', text: '面對孩子的挑戰，我選擇回應而非反應。', icon: '☀️' },
-            { color: 'yellow', theme: '自信與力量', text: '我尊重孩子的選擇，也尊重我自己的需求。', icon: '☀️' },
-            { color: 'yellow', theme: '自信與力量', text: '我釋放那些「我不夠好」的罪惡感，我是一個有力量的家長。', icon: '☀️' },
-
-            // 綠色 - 心輪 (愛、寬恕、接納)
-            { color: 'green', theme: '愛與寬恕', text: '我原諒自己過去在教養上犯的錯誤，那是我成長的養分。', icon: '💚' },
-            { color: 'green', theme: '愛與寬恕', text: '我愛孩子原本的樣子，而不是我期待他成為的樣子。', icon: '💚' },
-            { color: 'green', theme: '愛與寬恕', text: '愛是雙向的流動，在付出愛的同時，我也敞開心接受孩子的愛。', icon: '💚' },
-            { color: 'green', theme: '愛與寬恕', text: '當我對自己慈悲時，我就更有能量對孩子慈悲。', icon: '💚' },
-            { color: 'green', theme: '愛與寬恕', text: '即使在衝突中，我們之間的愛依然存在且堅固。', icon: '💚' },
-
-            // 藍色 - 喉輪 (溝通、真實、表達)
-            { color: 'blue', theme: '溝通與平靜', text: '我願意先傾聽孩子的心聲，再表達我的看法。', icon: '🪶' },
-            { color: 'blue', theme: '溝通與平靜', text: '我可以用平靜的語氣，表達我的擔憂與關心。', icon: '🪶' },
-            { color: 'blue', theme: '溝通與平靜', text: '真實地向孩子表達我的脆弱與極限，是建立連結的開始。', icon: '🪶' },
-            { color: 'blue', theme: '溝通與平靜', text: '沈默有時是最有力量的支持，我願意靜靜陪伴。', icon: '🪶' },
-            { color: 'blue', theme: '溝通與平靜', text: '我的話語充滿祝福，而不是恐懼與擔憂。', icon: '🪶' },
-
-            // 靛色 - 眉心輪 (直覺、洞見、遠見)
-            { color: 'indigo', theme: '直覺與看見', text: '我能夠看見孩子行為背後，那顆渴望被理解的心。', icon: '📖' },
-            { color: 'indigo', theme: '直覺與看見', text: '我相信我的父母直覺，它會指引我做出適合當下的決定。', icon: '📖' },
-            { color: 'indigo', theme: '直覺與看見', text: '我不被表象的成績或成就定義，我看見孩子靈魂的光芒。', icon: '📖' },
-            { color: 'indigo', theme: '直覺與看見', text: '將眼光放遠，眼前的困難只是孩子成長長河中的一顆小石子。', icon: '📖' },
-            { color: 'indigo', theme: '直覺與看見', text: '我信任宇宙的安排，孩子正在經歷他靈魂需要的體驗。', icon: '📖' },
-
-            // 紫色 - 頂輪 (智慧、靈性、合一)
-            { color: 'purple', theme: '智慧與放手', text: '真正的愛是放手，讓孩子去體驗他自己的人生旅程。', icon: '✨' },
-            { color: 'purple', theme: '智慧與放手', text: '孩子是藉由我而來，卻不是屬於我的，我尊重他是獨立的個體。', icon: '✨' },
-            { color: 'purple', theme: '智慧與放手', text: '我們是彼此生命的老師，感謝孩子來教導我成為更好的人。', icon: '✨' },
-            { color: 'purple', theme: '智慧與放手', text: '我將焦慮轉化為祝福，送光與愛給我的孩子。', icon: '✨' },
-            { color: 'purple', theme: '智慧與放手', text: '一切都是最好的安排，我臣服於生命的流動。', icon: '✨' },
-        ];
-
-        let currentCard = null;
-        let isAnimating = false;
-
-        // 顏色對應
-        const colorMap = {
-            red: { bg: 'color-red', text: 'text-red' },
-            orange: { bg: 'color-orange', text: 'text-orange' },
-            yellow: { bg: 'color-yellow', text: 'text-yellow' },
-            green: { bg: 'color-green', text: 'text-green' },
-            blue: { bg: 'color-blue', text: 'text-blue' },
-            indigo: { bg: 'color-indigo', text: 'text-indigo' },
-            purple: { bg: 'color-purple', text: 'text-purple' },
-        };
-
-        function startDrawing() {
-            document.getElementById('introSection').classList.add('fade-out');
-            setTimeout(() => {
-                document.getElementById('introSection').classList.add('hidden');
-                document.getElementById('cardSection').classList.remove('hidden');
-                document.getElementById('backBtn').classList.remove('hidden');
-                drawCard();
-            }, 300);
+        .card-header-info-row {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
         }
 
-        function drawCard() {
-            if (isAnimating) return;
-            isAnimating = true;
-
-            const card = document.getElementById('card');
-            card.classList.add('flipping');
-
-            setTimeout(() => {
-                const randomIndex = Math.floor(Math.random() * cardsData.length);
-                currentCard = cardsData[randomIndex];
-
-                const colorBand = document.getElementById('colorBand');
-                const colorClass = colorMap[currentCard.color].bg;
-                colorBand.className = `card-color-band ${colorClass}`;
-
-                document.getElementById('cardIcon').textContent = currentCard.icon;
-                document.getElementById('cardTheme').textContent = currentCard.theme;
-
-                const textElement = document.getElementById('cardText');
-                const textClass = colorMap[currentCard.color].text;
-                textElement.className = `card-text ${textClass}`;
-                textElement.textContent = currentCard.text;
-
-                card.classList.remove('flipping');
-                isAnimating = false;
-            }, 350);
-        }
-
-        function saveCard() {
-            if (!currentCard) return;
-            alert(`已保存卡片：\n\n主題：${currentCard.theme}\n\n"${currentCard.text}"\n\n（此為靜態版本，保存功能需要後端支持）`);
-        }
-
-        function shareCard() {
-            if (!currentCard) return;
-            const text = `${currentCard.theme}\n\n"${currentCard.text}"\n\n來自：家長彩虹情緒卡`;
-            
-            if (navigator.share) {
-                navigator.share({
-                    title: '家長彩虹情緒卡',
-                    text: text,
-                });
-            } else {
-                alert(`分享卡片：\n\n${text}\n\n（複製此文字分享給他人）`);
+        @media (min-width: 640px) {
+            .card-header-info-row {
+                flex-direction: row;
+                gap: 0.5rem;
             }
         }
 
-        function goHome() {
-            location.reload();
+        .card-header-info-label {
+            font-weight: 600;
+            opacity: 0.8;
         }
+
+        .card-tabs {
+            display: flex;
+            border-bottom: 1px solid var(--gray-100);
+        }
+
+        .tab-btn {
+            flex: 1;
+            padding: 1rem;
+            font-size: 0.95rem;
+            font-weight: 600;
+            border: none;
+            background: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: var(--gray-400);
+            border-bottom: 2px solid transparent;
+            outline: none;
+        }
+
+        .tab-btn:hover {
+            color: var(--gray-600);
+            background-color: var(--gray-50);
+        }
+
+        .tab-btn.active {
+            color: var(--gray-800);
+            border-bottom-color: currentColor;
+            background-color: white;
+        }
+
+        .card-content {
+            padding: 2rem 1.5rem;
+            min-height: 320px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            background-color: white;
+        }
+
+        @media (min-width: 768px) {
+            .card-content {
+                padding: 3rem;
+            }
+        }
+
+        .content-background-text {
+            position: absolute;
+            top: 1rem;
+            left: 1.5rem;
+            font-size: 6rem;
+            font-family: Georgia, serif;
+            opacity: 0.08;
+            pointer-events: none;
+            user-select: none;
+            line-height: 1;
+        }
+
+        .content-wrapper {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            width: 100%;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .content-wrapper.hidden {
+            opacity: 0;
+            transform: translateY(10px);
+            pointer-events: none;
+            display: none;
+        }
+
+        .affirmation-view {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .affirmation-text {
+            font-size: 1.5rem;
+            font-weight: 500;
+            line-height: 1.6;
+            letter-spacing: 0.025em;
+            color: var(--gray-800);
+            margin-bottom: 2.5rem;
+            font-family: "Songti TC", "Noto Serif TC", serif;
+        }
+
+        @media (min-width: 768px) {
+            .affirmation-text {
+                font-size: 2rem;
+            }
+        }
+
+        .button-group {
+            display: flex;
+            gap: 0.75rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .btn {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 0.75rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-size: 0.95rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        .btn:active {
+            transform: scale(0.97);
+        }
+
+        .btn-primary {
+            color: white;
+        }
+        
+        /* 避免在暗色背景文字看不清 */
+        .btn-primary:hover {
+            filter: brightness(1.1);
+        }
+
+        .btn-light {
+            background-color: var(--gray-50);
+            color: var(--gray-700);
+            border: 1px solid var(--gray-200);
+        }
+        
+        .btn-light:hover {
+            background-color: var(--gray-100);
+            border-color: var(--gray-300);
+        }
+
+        .practice-view {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 34rem;
+            margin: 0 auto;
+        }
+
+        .practice-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            margin-bottom: 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            line-height: 1.4;
+        }
+
+        .practice-desc {
+            color: var(--gray-600);
+            line-height: 1.8;
+            font-size: 1.125rem;
+            margin-bottom: 2.5rem;
+            text-align: justify;
+        }
+
+        .card-footer {
+            background-color: var(--gray-50);
+            padding: 1rem 1.5rem;
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--gray-500);
+            border-top: 1px solid var(--gray-100);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-quote {
+            text-align: center;
+            color: var(--gray-500);
+            font-size: 0.875rem;
+            opacity: 0.8;
+            margin-top: 2rem;
+            padding-bottom: 2rem;
+            font-style: italic;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            align-items: center;
+            justify-content: center;
+            z-index: 50;
+            padding: 1rem;
+            backdrop-filter: blur(4px);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .modal.open {
+            display: flex;
+            opacity: 1;
+        }
+
+        .modal-content {
+            background-color: white;
+            border-radius: 1.5rem;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            width: 100%;
+            max-width: 42rem;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            transform: scale(0.95);
+            transition: transform 0.3s ease;
+        }
+        
+        .modal.open .modal-content {
+            transform: scale(1);
+        }
+
+        .modal-header {
+            position: sticky;
+            top: 0;
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 1.25rem 1.5rem;
+            border-bottom: 1px solid var(--gray-200);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 10;
+        }
+
+        .modal-header h2 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--gray-800);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .modal-close-btn {
+            padding: 0.5rem;
+            background: var(--gray-100);
+            border: none;
+            cursor: pointer;
+            border-radius: 50%;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gray-500);
+        }
+
+        .modal-close-btn:hover {
+            background-color: var(--gray-200);
+            color: var(--gray-800);
+        }
+
+        .modal-body {
+            padding: 1.5rem;
+            color: var(--gray-700);
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+
+        @media (min-width: 768px) {
+            .modal-body {
+                padding: 2.5rem;
+            }
+        }
+
+        .modal-section {
+            margin-bottom: 2.5rem;
+        }
+
+        .modal-section:last-child {
+            margin-bottom: 0;
+        }
+
+        .modal-section h3 {
+            font-size: 1.125rem;
+            font-weight: 700;
+            color: var(--teal-800);
+            margin-bottom: 1rem;
+            border-left: 4px solid var(--teal-500);
+            padding-left: 0.75rem;
+        }
+
+        .step-item {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .step-number {
+            flex-shrink: 0;
+            width: 2rem;
+            height: 2rem;
+            border-radius: 50%;
+            background-color: var(--teal-100);
+            color: var(--teal-700);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1rem;
+        }
+
+        .step-content h4 {
+            font-weight: 700;
+            color: var(--gray-900);
+            margin-bottom: 0.25rem;
+        }
+
+        .step-content p {
+            font-size: 0.95rem;
+            color: var(--gray-600);
+            margin: 0;
+        }
+
+        .breathing-section {
+            background-color: var(--teal-50);
+            padding: 2rem;
+            border-radius: 1rem;
+            border: 1px solid var(--teal-100);
+            text-align: center;
+        }
+
+        .breathing-section h3 {
+            justify-content: center;
+            border-left: none;
+            color: var(--teal-800);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .breathing-bar {
+            height: 0.75rem;
+            background-color: var(--teal-200);
+            border-radius: 9999px;
+            overflow: hidden;
+            width: 100%;
+            max-width: 16rem;
+            margin: 1.5rem auto;
+        }
+
+        .breathing-bar-fill {
+            height: 100%;
+            background-color: var(--teal-500);
+            width: 100%;
+            animation: pulse 4s ease-in-out infinite;
+            transform-origin: left;
+        }
+
+        @keyframes pulse {
+            0% { transform: scaleX(0.2); opacity: 0.7; }
+            50% { transform: scaleX(1); opacity: 1; }
+            100% { transform: scaleX(0.2); opacity: 0.7; }
+        }
+
+        .breathing-text {
+            text-align: center;
+            font-size: 0.875rem;
+            color: var(--teal-700);
+            font-weight: 500;
+        }
+
+        .modal-footer {
+            text-align: center;
+            padding: 1.5rem;
+            background-color: var(--gray-50);
+            border-top: 1px solid var(--gray-100);
+            border-radius: 0 0 1.5rem 1.5rem;
+        }
+
+        .start-btn {
+            background-color: var(--teal-600);
+            color: white;
+            padding: 0.75rem 3rem;
+            border: none;
+            border-radius: 9999px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(13, 148, 136, 0.3);
+            font-size: 1rem;
+        }
+
+        .start-btn:hover {
+            background-color: var(--teal-700);
+            box-shadow: 0 6px 8px rgba(13, 148, 136, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .start-btn:active {
+            transform: scale(0.95);
+        }
+
+        /* Chakra Color Classes - Dynamic Theming */
+        .chakra-root {
+            --chakra-bg: var(--red-50);
+            --chakra-border: var(--red-200);
+            --chakra-text: var(--red-800);
+            --chakra-button: var(--red-600);
+            --chakra-button-hover: var(--red-700);
+            --chakra-button-light: var(--red-100);
+            --chakra-button-light-hover: var(--red-200);
+            --chakra-accent: var(--red-600);
+        }
+
+        .chakra-sacral {
+            --chakra-bg: var(--orange-50);
+            --chakra-border: var(--orange-200);
+            --chakra-text: var(--orange-800);
+            --chakra-button: var(--orange-500);
+            --chakra-button-hover: var(--orange-600);
+            --chakra-button-light: var(--orange-100);
+            --chakra-button-light-hover: var(--orange-200);
+            --chakra-accent: var(--orange-600);
+        }
+
+        .chakra-solar {
+            --chakra-bg: var(--yellow-50);
+            --chakra-border: var(--yellow-200);
+            --chakra-text: var(--yellow-800);
+            --chakra-button: var(--yellow-500);
+            --chakra-button-hover: var(--yellow-600);
+            --chakra-button-light: var(--yellow-100);
+            --chakra-button-light-hover: var(--yellow-200);
+            --chakra-accent: var(--yellow-700);
+        }
+
+        .chakra-heart {
+            --chakra-bg: var(--green-50);
+            --chakra-border: var(--green-200);
+            --chakra-text: var(--green-800);
+            --chakra-button: var(--green-600);
+            --chakra-button-hover: var(--green-700);
+            --chakra-button-light: var(--green-100);
+            --chakra-button-light-hover: var(--green-200);
+            --chakra-accent: var(--green-600);
+        }
+
+        .chakra-throat {
+            --chakra-bg: var(--blue-50);
+            --chakra-border: var(--blue-200);
+            --chakra-text: var(--blue-800);
+            --chakra-button: var(--blue-500);
+            --chakra-button-hover: var(--blue-600);
+            --chakra-button-light: var(--blue-100);
+            --chakra-button-light-hover: var(--blue-200);
+            --chakra-accent: var(--blue-600);
+        }
+
+        .chakra-thirdeye {
+            --chakra-bg: var(--indigo-50);
+            --chakra-border: var(--indigo-200);
+            --chakra-text: var(--indigo-800);
+            --chakra-button: var(--indigo-600);
+            --chakra-button-hover: var(--indigo-700);
+            --chakra-button-light: var(--indigo-100);
+            --chakra-button-light-hover: var(--indigo-200);
+            --chakra-accent: var(--indigo-600);
+        }
+
+        .chakra-crown {
+            --chakra-bg: var(--purple-50);
+            --chakra-border: var(--purple-200);
+            --chakra-text: var(--purple-800);
+            --chakra-button: var(--purple-600);
+            --chakra-button-hover: var(--purple-700);
+            --chakra-button-light: var(--purple-100);
+            --chakra-button-light-hover: var(--purple-200);
+            --chakra-accent: var(--purple-600);
+        }
+
+        /* Applying the theme variables */
+        body[class*="chakra-"] {
+            background-color: var(--chakra-bg);
+        }
+
+        .card-header {
+            border-bottom-color: var(--chakra-border);
+            background-color: rgba(255, 255, 255, 0.6);
+        }
+
+        .card-header h2 {
+            color: var(--chakra-text);
+        }
+
+        .color-badge {
+            border-color: var(--chakra-border);
+            color: var(--chakra-text);
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+
+        .card-header-info-label {
+            color: var(--chakra-text);
+        }
+
+        .card-header-info .italic {
+            color: var(--chakra-accent);
+            font-style: italic;
+        }
+
+        .tab-btn.active {
+            border-bottom-color: var(--chakra-border);
+            color: var(--chakra-text);
+        }
+        
+        .tab-btn:hover:not(.active) {
+            color: var(--chakra-accent);
+        }
+
+        .btn-primary {
+            background-color: var(--chakra-button);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--chakra-button-hover);
+        }
+
+        .btn-light {
+            background-color: var(--chakra-button-light);
+            color: var(--chakra-text);
+            border-color: var(--chakra-border);
+        }
+
+        .btn-light:hover {
+            background-color: var(--chakra-button-light-hover);
+        }
+        
+        .chakra-btn.active {
+            background-color: var(--chakra-button);
+            border-color: var(--chakra-button);
+        }
+
+        .practice-title {
+            color: var(--chakra-text);
+        }
+
+        .content-background-text {
+            color: var(--chakra-text);
+        }
+
+        svg {
+            display: inline-block;
+            pointer-events: none;
+            vertical-align: middle;
+        }
+
+        button {
+            pointer-events: auto;
+        }
+        
+        /* Toast notification */
+        .toast {
+            position: fixed;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%) translateY(100px);
+            background-color: rgba(31, 41, 55, 0.9);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            opacity: 0;
+            transition: all 0.3s ease;
+            z-index: 100;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .toast.show {
+            transform: translateX(-50%) translateY(0);
+            opacity: 1;
+        }
+    </style>
+</head>
+<body class="chakra-root">
+    <div class="navbar">
+        <h1>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2a10 10 0 1 0 10 10H12V2z"></path>
+                <path d="M12 12 2.73 6.64"></path>
+                <path d="M12 12l9.27-5.36"></path>
+            </svg>
+            <span class="hidden-mobile">每日正念：</span>色彩療癒
+        </h1>
+        <button class="guide-btn" onclick="openGuide()">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="12" y1="16" x2="12" y2="12"></line>
+                <line x1="12" y1="8" x2="12.01" y2="8"></line>
+            </svg>
+            <span class="hidden-mobile">使用指南</span>
+        </button>
+    </div>
+
+    <div id="guideModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                        <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                    </svg>
+                    每日正念練習指南
+                </h2>
+                <button class="modal-close-btn" onclick="closeGuide()" aria-label="關閉">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-section">
+                    <h3>1.0 為你的心靈調色</h3>
+                    <p>你好，歡迎來到這趟自我關懷的旅程。這份指南將引導你如何根據當下的心情，透過簡單的色彩選擇，將正念練習融入日常生活。讓我們一起開始這趟專屬於你的內在療癒旅程。</p>
+                </div>
+
+                <div class="modal-section">
+                    <h3>2.0 如何開始：三步驟指引</h3>
+                    <div class="step-item">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h4>靜心覺察，感受當下</h4>
+                            <p>暫停手邊的事，閉上眼一分鐘，溫柔地問自己：「我現在的感覺是什麼？」不分析、不評判，單純覺察。</p>
+                        </div>
+                    </div>
+
+                    <div class="step-item">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h4>選擇今日的療癒色彩</h4>
+                            <p>根據你的覺察，在上方選單點選最共鳴的顏色。例如感到焦慮選擇紅色，感到迷惘選擇靛色。</p>
+                        </div>
+                    </div>
+
+                    <div class="step-item">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h4>靜心閱讀與反思</h4>
+                            <p>抽取一句療癒小語，並搭配下方的「圓圈呼吸法」。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-section breathing-section">
+                    <h3>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M9.59 4.59A2 2 0 1 1 5.41 8.59"></path>
+                            <path d="M9.59 19.41A2 2 0 1 0 5.41 15.41"></path>
+                            <ellipse cx="12" cy="12" rx="8" ry="2"></ellipse>
+                        </svg>
+                        圓圈呼吸法 (Circle Breath)
+                    </h3>
+                    <p>閉上眼睛，開始專注於你的呼吸。跟隨呼吸的自然循環，感受吸氣與吐氣的流動。持續進行 4-8 次呼吸，讓身心完全沉靜下來。</p>
+                    <div class="breathing-bar">
+                        <div class="breathing-bar-fill"></div>
+                    </div>
+                    <p class="breathing-text">吸氣... 吐氣...</p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="start-btn" onclick="closeGuide()">開始練習</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-container">
+        <div class="intro-section">
+            <h2>為你的心靈調色</h2>
+            <p>覺察當下的情緒，選擇共鳴的色彩，開啟今日的自我關懷。</p>
+        </div>
+
+        <div class="chakra-nav" id="chakraNav"></div>
+
+        <div class="main-card">
+            <div class="card-header">
+                <div class="card-header-title">
+                    <h2 id="chakraTitle"></h2>
+                    <div class="color-badge" id="colorBadge"></div>
+                </div>
+                <div class="card-header-info">
+                    <div class="card-header-info-row">
+                        <span class="card-header-info-label">適合：</span>
+                        <span class="italic" id="chakraSymptoms"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-tabs">
+                <button class="tab-btn active" onclick="switchTab(false)">療癒小語</button>
+                <button class="tab-btn" onclick="switchTab(true)">簡易練習</button>
+            </div>
+
+            <div class="card-content">
+                <div class="content-background-text" id="bgText">"</div>
+                
+                <div class="content-wrapper" id="affirmationView">
+                    <div class="affirmation-view">
+                        <p class="affirmation-text" id="affirmationText"></p>
+                        <div class="button-group">
+                            <button class="btn btn-primary" onclick="drawCard()">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="23 4 23 10 17 10"></polyline>
+                                    <path d="M20.49 15a9 9 0 1 1-2-8.83"></path>
+                                </svg>
+                                抽取指引
+                            </button>
+                            <button class="btn btn-light" onclick="copyToClipboard(false)" id="copyBtn">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path>
+                                    <rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-wrapper hidden" id="practiceView" style="display:none;">
+                    <div class="practice-view">
+                        <h3 class="practice-title" id="practiceTitle"></h3>
+                        <p class="practice-desc" id="practiceDesc"></p>
+                        <button class="btn btn-light" onclick="copyToClipboard(true)">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path>
+                                <rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect>
+                            </svg>
+                            複製練習步驟
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-footer">
+                <span id="footerTheme"></span>
+                <span>
+                    <span id="footerMode">正念指引</span>
+                    <span style="display: inline-block; width: 3px; height: 3px; border-radius: 50%; background-color: var(--gray-400); margin: 0 0.5rem; vertical-align: middle;"></span>
+                    <span id="footerBody"></span>
+                </span>
+            </div>
+        </div>
+
+        <div class="footer-quote">
+            <p>「照顧好自己的心，是這輩子最重要的事。」</p>
+        </div>
+    </div>
+    
+    <div id="toast" class="toast">已複製到剪貼簿</div>
+
+    <script>
+        const CHAKRA_DATA = [
+            {
+                id: 'root',
+                name: '海底輪 (Root)',
+                colorName: '紅色',
+                theme: '生存、安全感、接地氣、生命力',
+                body: '脊椎底部、雙腳',
+                symptoms: '感到焦慮、漂浮不安、恐懼未來時',
+                practice: {
+                    title: '簡易練習：身體掃描 (接地氣)',
+                    desc: '閉上眼睛，將你的全部注意力帶到雙腳。感受你的腳掌與地板或鞋子接觸的感覺，想像有能量從大地傳遞上來，支撐著你。單純地去見證這個穩固的連結，強化內在的安全感。'
+                },
+                affirmations: [
+                    "你的存在，本身就是一個奇蹟。",
+                    "感受腳踏實地的感覺，那是大地的支撐。",
+                    "現在的你是安全的，一切都有最好的安排。",
+                    "萬物皆有定時，請耐心等待。",
+                    "你的價值，不取決於你的生產力。",
+                    "給自己一點時間，花開也需要過程。",
+                    "慢慢來，比較快。",
+                    "只要心向陽光，就不怕路途遙遠。",
+                    "今天的你，辛苦了。",
+                    "你是一朵獨一無二的花，有自己的花期。",
+                    "只要不停下腳步，終會抵達。",
+                    "所有的安排，都是最好的安排。",
+                    "困境是包裝醜陋的禮物。",
+                    "穩定內心，外界的風雨就無法撼動你。",
+                    "深深地紮根在當下。"
+                ]
+            },
+            {
+                id: 'sacral',
+                name: '生殖輪 (Sacral)',
+                colorName: '橙色',
+                theme: '情緒、創造力、親密關係',
+                body: '下腹部',
+                symptoms: '感到情緒壓抑、枯燥乏味、否定慾望時',
+                practice: {
+                    title: '簡易練習：創意藝術時間 (情緒流動)',
+                    desc: '準備紙筆或黏土，不需要任何技巧。只是單純地透過繪畫、書寫或捏塑來表達當下的感受。即使只是隨意的塗鴉，這個過程也能幫助你釋放內在的張力，讓情緒自然地流動。'
+                },
+                affirmations: [
+                    "所有的感受都值得被溫柔以待。",
+                    "容許自己偶爾不完美，因為裂縫是光進入的地方。",
+                    "允許自己感受悲傷，那是靈魂在排毒。",
+                    "你的情緒就像天氣，會來也會走。",
+                    "享受生命中的微小喜悅，那也是一種成功。",
+                    "學習愛自己的第一步，是停止自我批評。",
+                    "溫柔地對待你的身體，它是你唯一的靈魂居所。",
+                    "釋放那些不再服務於你的情緒。",
+                    "生活不在別處，就在此時此刻。",
+                    "每天都是一個新的機會，去創造美好。",
+                    "讓生活充滿色彩，你是自己生命的畫家。",
+                    "喜悅是你的天賦權利。",
+                    "擁抱變化，那是生命流動的證明。",
+                    "在創造中找回純粹的快樂。"
+                ]
+            },
+            {
+                id: 'solar',
+                name: '太陽輪 (Solar)',
+                colorName: '黃色',
+                theme: '自信、勇氣、個人力量',
+                body: '腹部、胃部',
+                symptoms: '感到自卑、退縮、被他人掌控時',
+                practice: {
+                    title: '簡易練習：積極的自我對話 (自我肯定)',
+                    desc: '從療癒小語中，選擇一句你最需要的肯定句。走到鏡子前，看著自己的眼睛，溫柔而堅定地對自己說出來。你也可以將它寫在便利貼上，貼在隨處可見的地方。'
+                },
+                affirmations: [
+                    "你不需要成為別人期待的樣子，做你自己就好。",
+                    "你的光芒，不會因為別人的否定而暗淡。",
+                    "勇敢不是不害怕，而是帶著恐懼前行。",
+                    "你的潛力，超乎你的想像。",
+                    "做正確的事，而不是容易的事。",
+                    "敢於說「不」，是自我認同的開始。",
+                    "你的堅強，是你最美的戰袍。",
+                    "相信自己，你有度過難關的力量。",
+                    "你是自己生命的主角，不是配角。",
+                    "失敗不是終點，而是轉彎的起點。",
+                    "跨出舒適圈，世界會變得更寬廣。",
+                    "保持善良，但要記得帶點鋒芒保護自己。",
+                    "你的努力，時間都記得。",
+                    "拿回你的力量，主導你的人生。",
+                    "你有權利定義自己的成功。"
+                ]
+            },
+            {
+                id: 'heart',
+                name: '心輪 (Heart)',
+                colorName: '綠色',
+                theme: '愛、同情心、接納、寬恕',
+                body: '胸口中心',
+                symptoms: '感到心碎、孤單、憤恨、難以寬恕時',
+                practice: {
+                    title: '簡易練習：溫柔的擁抱 (擁抱自己)',
+                    desc: '輕輕地用雙臂環抱自己，給自己一個溫暖的擁抱。同時，在心中默念一句最有共鳴的綠色小語（例如：「愛自己，是終身浪漫的開始」）。感受這個擁抱帶來的撫慰與溫暖。'
+                },
+                affirmations: [
+                    "愛自己，是終身浪漫的開始。",
+                    "願你眼中有光，心中有愛。",
+                    "你值得被愛，不需要任何前提。",
+                    "給予愛，你會收穫更多的愛。",
+                    "溫柔地對待自己，就像對待最好的朋友。",
+                    "寬恕別人，是為了放過自己。",
+                    "擁抱那個受傷的小孩，告訴他「現在安全了」。",
+                    "感謝那些傷害你的人，讓你學會強大。",
+                    "愛是治癒一切的良藥。",
+                    "願你活得通透，愛得純粹。",
+                    "把愛傳遞下去，世界會因此不同。",
+                    "溫暖別人的人，也會被世界溫暖。",
+                    "感謝那些支持你的人，讓你學會溫暖。",
+                    "心存感激，所見皆是風景。",
+                    "每一段經歷，都是在雕琢最好的你。",
+                    "在愛中，我們都是完整的。"
+                ]
+            },
+            {
+                id: 'throat',
+                name: '喉輪 (Throat)',
+                colorName: '藍色',
+                theme: '表達、真實、溝通、聆聽',
+                body: '喉嚨',
+                symptoms: '感到有話難言、壓抑想法、失去聲音時',
+                practice: {
+                    title: '簡易練習：情緒日誌 (寫下心聲)',
+                    desc: '準備一本筆記本，將那些不敢說、不知如何說的話語寫下來。這是一個安全的空間，讓你與自己進行最真誠的對話，釐清內心的想法與感受，找回屬於自己的聲音。'
+                },
+                affirmations: [
+                    "說出你的真理，那是靈魂的聲音。",
+                    "不需要向世界證明什麼，你只需對自己負責。",
+                    "靜下心來，聽聽內心的聲音。",
+                    "誠實地面對自己的需求。",
+                    "文字有力量，請對自己說好話。",
+                    "保持初心，不論走得多遠。",
+                    "分享你的故事，那能療癒他人。",
+                    "聆聽大自然的寂靜，那裡有答案。",
+                    "勇敢表達你的感受，不論好壞。",
+                    "你的聲音很重要，請不要低估它。",
+                    "溝通是心靈的橋樑，先與自己對話。",
+                    "真誠是最高級的人格魅力。"
+                ]
+            },
+            {
+                id: 'thirdeye',
+                name: '三眼輪 (Third Eye)',
+                colorName: '靛色',
+                theme: '直覺、洞察力、覺察、智慧',
+                body: '眉心',
+                symptoms: '感到迷惘、過度分析、無法決定時',
+                practice: {
+                    title: '簡易練習：觀察念頭 (靜觀思緒)',
+                    desc: '閉上眼睛，想像你的思緒就像天空中的雲朵。當一個念頭出現時，只是靜靜地看著它，認知到它的存在，但不去抓住它或與之互動。就這樣看著它緩緩飄過，讓下一個念頭自然升起。'
+                },
+                affirmations: [
+                    "覺察而不評判，是給心靈最好的洗禮。",
+                    "思緒像雲一樣飄過，不要抓著不放。",
+                    "改變不了環境，就改變看世界的角度。",
+                    "給心靈留一點空間，讓智慧自然浮現。",
+                    "星光不問趕路人，時光不負有心人。",
+                    "所有的痛苦，最終都會化為養分。",
+                    "萬物皆有其意義，只是目前尚未看清。",
+                    "活在當下，就是對生命最大的尊重。",
+                    "相信你的直覺，那是靈魂的導航。",
+                    "把障礙當作階梯，一步步向上爬。",
+                    "斷捨離，不僅是物品，也是負面情緒。",
+                    "透過表象看本質，心境自然轉。"
+                ]
+            },
+            {
+                id: 'crown',
+                name: '頂輪 (Crown)',
+                colorName: '紫色',
+                theme: '靈性、大愛、信任、解脫',
+                body: '頭頂',
+                symptoms: '感到生命虛無、與世界脫節、過於執著時',
+                practice: {
+                    title: '簡易練習：感恩呼吸 (連結當下)',
+                    desc: '專注地進行三次深長的呼吸。在吸氣時，感受生命能量充滿你的全身，這是宇宙給予你的禮物；在吐氣時，想像將所有不再需要的執著與煩惱輕輕地釋放。感受與當下深刻的連結。'
+                },
+                affirmations: [
+                    "心若不動，風又奈何。",
+                    "當下這一刻，就是最珍貴的禮物。",
+                    "放下執著，你才能騰出手來擁抱美好。",
+                    "所有的相遇，都是久別重逢。",
+                    "願你平安喜樂，萬事勝意。",
+                    "生命的意義，在於你賦予它什麼。",
+                    "記住，你永遠不是孤單一人。",
+                    "在喧囂中，守住內心的平靜。",
+                    "每一口呼吸，都是新的開始。",
+                    "幸福不是擁有的多，而是計較的少。",
+                    "相信奇蹟的人，更容易遇見奇蹟。",
+                    "宇宙始終以某種方式在支持著你。",
+                    "平凡的日子裡，也藏著不平凡的美麗。",
+                    "回歸本源，你本自具足。"
+                ]
+            }
+        ];
+
+        let activeChakraId = 'root';
+        let currentAffirmation = '';
+        let isAnimating = false;
+        let showPractice = false;
+
+        function getActiveChakra() {
+            return CHAKRA_DATA.find(c => c.id === activeChakraId);
+        }
+
+        function initializeChakraNav() {
+            const nav = document.getElementById('chakraNav');
+            nav.innerHTML = '';
+            CHAKRA_DATA.forEach(chakra => {
+                const btn = document.createElement('button');
+                btn.className = `chakra-btn ${chakra.id === activeChakraId ? 'active' : ''}`;
+                btn.onclick = () => selectChakra(chakra.id);
+                btn.title = chakra.name;
+                
+                // Simplified text logic for mobile
+                const initial = chakra.name.split(' ')[1] ? chakra.name.split(' ')[1].substring(0,1) : chakra.name.substring(0,1);
+                
+                btn.innerHTML = `
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"></circle>
+                    </svg>
+                    <span class="hidden-mobile">${chakra.name.split(' ')[0]}</span>
+                    <span class="sm-only" style="display:none">${initial}</span>
+                `;
+                nav.appendChild(btn);
+            });
+        }
+
+        function selectChakra(chakraId) {
+            if (isAnimating && chakraId !== activeChakraId) return;
+            activeChakraId = chakraId;
+            // Note: We keep the current tab view (practice or affirmation) when switching chakra
+            
+            document.body.className = `chakra-${chakraId}`;
+            updateUI();
+            
+            // Re-draw card content with animation if we are in affirmation mode
+            if (!showPractice) {
+                drawCard();
+            }
+            
+            updateChakraNav();
+        }
+
+        function updateChakraNav() {
+            document.querySelectorAll('.chakra-btn').forEach((btn, idx) => {
+                if (CHAKRA_DATA[idx].id === activeChakraId) {
+                    btn.classList.add('active');
+                } else {
+                    btn.classList.remove('active');
+                }
+            });
+        }
+
+        function updateUI() {
+            const chakra = getActiveChakra();
+            document.getElementById('chakraTitle').textContent = chakra.name;
+            document.getElementById('colorBadge').textContent = chakra.colorName + '能量';
+            document.getElementById('chakraSymptoms').textContent = chakra.symptoms;
+            document.getElementById('practiceTitle').textContent = chakra.practice.title;
+            document.getElementById('practiceDesc').textContent = chakra.practice.desc;
+            document.getElementById('footerTheme').textContent = chakra.theme.split('、')[0] + '能量';
+            document.getElementById('footerBody').textContent = chakra.body;
+            
+            const bgText = document.getElementById('bgText');
+            bgText.textContent = showPractice ? 'Pract' : '"';
+            bgText.style.fontSize = showPractice ? '4rem' : '6rem';
+            bgText.style.top = showPractice ? '2rem' : '1rem';
+        }
+
+        function drawCard() {
+            const chakra = getActiveChakra();
+            isAnimating = true;
+            const affirmationView = document.getElementById('affirmationView');
+            const affirmationText = document.getElementById('affirmationText');
+            
+            affirmationView.classList.add('hidden');
+            
+            setTimeout(() => {
+                let newAffirmation;
+                // Avoid picking the exact same affirmation if possible
+                do {
+                    const randomIndex = Math.floor(Math.random() * chakra.affirmations.length);
+                    newAffirmation = chakra.affirmations[randomIndex];
+                } while (newAffirmation === currentAffirmation && chakra.affirmations.length > 1);
+                
+                currentAffirmation = newAffirmation;
+                affirmationText.textContent = currentAffirmation;
+                affirmationView.classList.remove('hidden');
+                isAnimating = false;
+            }, 400);
+        }
+
+        function switchTab(isPractice) {
+            if (showPractice === isPractice) return;
+            
+            showPractice = isPractice;
+            const affirmationView = document.getElementById('affirmationView');
+            const practiceView = document.getElementById('practiceView');
+            const tabs = document.querySelectorAll('.tab-btn');
+
+            if (isPractice) {
+                affirmationView.style.display = 'none';
+                practiceView.style.display = 'flex';
+                // slight delay to allow display:flex to apply before removing opacity class for transition
+                setTimeout(() => {
+                    practiceView.classList.remove('hidden');
+                }, 10);
+                affirmationView.classList.add('hidden');
+                
+                tabs[0].classList.remove('active');
+                tabs[1].classList.add('active');
+                document.getElementById('footerMode').textContent = '靜心練習';
+            } else {
+                practiceView.style.display = 'none';
+                practiceView.classList.add('hidden');
+                
+                affirmationView.style.display = 'block';
+                setTimeout(() => {
+                    affirmationView.classList.remove('hidden');
+                }, 10);
+                
+                tabs[0].classList.add('active');
+                tabs[1].classList.remove('active');
+                document.getElementById('footerMode').textContent = '正念指引';
+            }
+            updateUI();
+        }
+
+        function copyToClipboard(isPracticeContent) {
+            const chakra = getActiveChakra();
+            const textToCopy = isPracticeContent 
+                ? `${chakra.practice.title}\n${chakra.practice.desc}` 
+                : `${currentAffirmation}\n\n— 來自${chakra.name}的正念指引`;
+            
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(textToCopy).then(() => {
+                    showToast();
+                }).catch(err => {
+                    console.error('Async: Could not copy text: ', err);
+                    fallbackCopyTextToClipboard(textToCopy);
+                });
+            } else {
+                fallbackCopyTextToClipboard(textToCopy);
+            }
+        }
+
+        function fallbackCopyTextToClipboard(text) {
+            const textArea = document.createElement("textarea");
+            textArea.value = text;
+            
+            // Avoid scrolling to bottom
+            textArea.style.top = "0";
+            textArea.style.left = "0";
+            textArea.style.position = "fixed";
+
+            document.body.appendChild(textArea);
+            textArea.focus();
+            textArea.select();
+
+            try {
+                const successful = document.execCommand('copy');
+                if (successful) showToast();
+            } catch (err) {
+                console.error('Fallback: Oops, unable to copy', err);
+            }
+
+            document.body.removeChild(textArea);
+        }
+
+        function showToast() {
+            const toast = document.getElementById('toast');
+            toast.classList.add('show');
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 2500);
+        }
+
+        function openGuide() {
+            document.getElementById('guideModal').classList.add('open');
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        }
+
+        function closeGuide() {
+            document.getElementById('guideModal').classList.remove('open');
+            document.body.style.overflow = '';
+        }
+        
+        // Close modal when clicking outside
+        document.getElementById('guideModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeGuide();
+            }
+        });
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            initializeChakraNav();
+            
+            // Randomly select initial chakra or default to Root
+            // selectChakra('root'); 
+            
+            updateUI();
+            drawCard();
+        });
     </script>
 </body>
 </html>
